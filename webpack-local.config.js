@@ -6,7 +6,7 @@ module.exports = {
   entry: [
     "react-app-polyfill/ie9", // Only if you want to support IE 9
     "react-app-polyfill/stable",
-    "./src/main.tsx",
+    "./src/app/main.tsx",
   ],
   output: {
     path: path.resolve(__dirname, "./widget"),
@@ -22,6 +22,9 @@ module.exports = {
   resolve: {
     modules: [__dirname, "src", "node_modules"],
     extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
