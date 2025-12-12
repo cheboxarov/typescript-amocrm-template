@@ -1,4 +1,4 @@
-define(["./app.js?cache=" + Date.now()], function (App) {
+ldefine(["./app.js?cache=" + Date.now()], function (App) {
 	const Widget = function () {
 		const self = this;
 		self.system = this.system();
