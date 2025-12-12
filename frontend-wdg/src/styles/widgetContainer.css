@@ -1,0 +1,198 @@
+/**
+ * Минималистичные стили для виджета управления звонками в карточке контакта amoCRM
+ */
+
+.calls-manager-widget-container {
+  margin: 8px 0 12px 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  position: relative;
+  font-size: 13px;
+}
+
+.calls-manager-widget-container .ant-card {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.calls-manager-widget-container .widget-header {
+  margin-bottom: 6px;
+}
+
+.calls-manager-widget-container .ant-card-head {
+  padding: 0;
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.calls-manager-widget-container .ant-card-body {
+  padding: 0;
+}
+
+.calls-manager-widget-container .ant-typography h4 {
+  margin: 0 0 2px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  line-height: 1.2;
+}
+
+.calls-manager-widget-container .ant-typography p {
+  margin: 0;
+  font-size: 12px;
+  color: #8c8c8c;
+  line-height: 1.3;
+}
+
+/* Fallback стили для виджета в body */
+.calls-manager-widget-fallback {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ff4d4f;
+}
+
+.calls-manager-widget-fallback::before {
+  background: linear-gradient(90deg, #ff4d4f, #faad14);
+}
+
+/* Анимация появления */
+.calls-manager-widget-container {
+  animation: widgetFadeIn 0.3s ease-out;
+}
+
+@keyframes widgetFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Компактные стили для узких областей */
+@media (max-width: 1200px) {
+  .calls-manager-widget-container {
+    margin: 6px 0 8px 0;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .calls-manager-widget-container .ant-typography h4 {
+    font-size: 13px;
+  }
+
+  .calls-manager-widget-container .ant-typography p {
+    font-size: 11px;
+  }
+}
+
+/* Стили для модального окна звонков */
+.calls-modal-content {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.calls-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.calls-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.calls-modal-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.calls-modal-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.calls-modal-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.calls-modal-list::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.calls-modal-list::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* Стили для скрытых звонков */
+.call-hidden-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #595959;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.call-hidden-placeholder__button {
+  border: none;
+  background: transparent;
+  color: #1d39c4;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.call-hidden-placeholder__button:hover {
+  text-decoration: underline;
+}
+
+.hidden-call-hide-btn {
+  border: none;
+  background: transparent;
+  color: #8c8c8c;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .calls-manager-widget-container {
+    margin: 4px 0 6px 0;
+    padding: 4px 6px;
+  }
+
+  .calls-modal-content {
+    max-height: 60vh;
+  }
+
+  .calls-modal-list {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,32 @@
+.loading {
+    text-align: center; /* Центрируем текст загрузки */
+    font-size: 14px; /* Уменьшаем размер шрифта для текста загрузки */
+    color: #44af27; /* Цвет текста загрузки */
+    display: flex; /* Используем флексбокс для центровки содержимого */
+    flex-direction: column; /* Вертикальная центровка */
+    align-items: center; /* Горизонтальная центровка */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Светлый цвет фона */
+    border-left-color: #41df1e; /* Цвет левой части */
+    border-radius: 50%; /* Круглая форма */
+    width: 20px; /* Ширина */
+    height: 20px; /* Высота */
+    animation: spin 1s linear infinite; /* Анимация вращения */
+    margin-bottom: 8px; /* Отступ между спиннером и текстом */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Начальное положение */
+    }
+    100% {
+        transform: rotate(360deg); /* Конечное положение */
+    }
+}
+
+.error {
+    color: red; /* Красный цвет для ошибок */
+    text-align: center; /* Центрируем текст ошибки */
+}
